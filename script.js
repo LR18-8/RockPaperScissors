@@ -36,6 +36,10 @@ function playRound(humanChoice, computerChoice){
     let humanScore = 0;
     let computerScore = 0;
 
+    if (humanChoice === computerChoice) {
+        console.log(`You selected ${humanChoice} and the Computer also selected ${computerChoice}. This round is a draw!`)
+    };
+
     //compute winner between rock vs scissors
     if (humanChoice === rock && computerChoice === scissors){
         console.log("You Win! Rock beats Scissors");

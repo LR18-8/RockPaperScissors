@@ -23,11 +23,6 @@ function getHumanChoice(){
         //console.log(humanChoice); // Used for testing
 };
 
-/* MOVED INTO PLAYROUND FUNCTION FOR TESTING
-let humanScore = 0;
-let computerScore = 0;
-*/
-
 function playRound(humanChoice, computerChoice){
     let rock = "rock";
     let paper = "paper";
@@ -36,6 +31,7 @@ function playRound(humanChoice, computerChoice){
     let humanScore = 0;
     let computerScore = 0;
 
+    //check to see if round is a draw
     if (humanChoice === computerChoice) {
         console.log(`You selected ${humanChoice} and the Computer also selected ${computerChoice}. This round is a draw!`)
     };

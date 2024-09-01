@@ -1,14 +1,22 @@
-// function getRandomInt() {
-//  return Math.floor(Math.random() * 3);
-//  }
-  
-//  console.log(getRandomInt());
-//  Expected output: 0, 1 or 2
+function getComputerChoice(){  
+    let randomNumber = Math.floor(Math.random() * 3); 
+    let computerChoice = "I haven't made my choice yet!";
 
-function getComputerChoice(){
-    return Math.floor(Math.random() * 3);
-}
+    if (randomNumber === 0){
+        computerChoice = "Rock"
+    } else if (randomNumber === 1){
+        computerChoice = "Paper"
+    } else {
+        computerChoice = "Scissors"
+    };
 
-const cpuChoice = getComputerChoice();
+    //console.log(randomNumber); used for testing
 
-console.log(cpuChoice);
+    //console.log(computerChoice); Used for testing
+};
+
+function getHumanChoice(){
+    let humanChoice = prompt("Please choose between Rock, Paper or Scissors.");
+
+    console.log(humanChoice); // Used for testing
+};

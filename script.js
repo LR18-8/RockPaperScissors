@@ -84,15 +84,12 @@ function playGame(){
 let globalHumanScore = 0;
 let globalComputerScore = 0;
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
-
 //loop to play game for 5 rounds
-for (let roundCount = 0; roundCount <  4; roundCount++){
+for (let roundCount = 1; roundCount <= 5; roundCount++){
     
     humanSelection = getHumanChoice();
     computerSelection = getComputerChoice();
-    
+
     playGame();
 
     console.log("\n"); 
@@ -101,21 +98,15 @@ for (let roundCount = 0; roundCount <  4; roundCount++){
 console.log("\n");
 
 
-console.log(`Computer Score: ${globalComputerScore}`);
-console.log(`Player Score ${globalComputerScore}`);
-
-console.log("\n");
-
-
 //display global scores
 if (globalComputerScore === globalHumanScore){
 
-    console.log(`The game is a draw. You scored ${globalHumanScore} and the computer scored ${globalComputerScore}`)
+    console.log(`The game is a draw. You scored ${globalHumanScore} and the computer scored ${globalComputerScore}`);
 
 } else if (globalHumanScore < globalComputerScore){
 
-    console.log(`You Loose, ${globalComputerScore} to ${globalHumanScore}`)
+    console.log(`You Loose, ${globalComputerScore} to ${globalHumanScore}`);
 } else {
 
-    console.log(`You Win, ${globalHumanScore} to ${globalComputerScore}`)
+    console.log(`You Win, ${globalHumanScore} to ${globalComputerScore}`);
 };

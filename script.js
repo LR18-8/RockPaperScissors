@@ -81,8 +81,9 @@ function playGame(){
         return humanScore, computerScore;
  };
 
-let globalHumanScore = 0;
-let globalComputerScore = 0;
+/*
+
+-------- RUN GAME LOGIC --------
 
 //loop to play game for 5 rounds
 for (let roundCount = 1; roundCount <= 5; roundCount++){
@@ -95,7 +96,6 @@ for (let roundCount = 1; roundCount <= 5; roundCount++){
     console.log("\n"); 
 };
 
-console.log("\n");
 
 
 //display global scores
@@ -110,3 +110,5 @@ if (globalComputerScore === globalHumanScore){
 
     console.log(`You Win, ${globalHumanScore} to ${globalComputerScore}`);
 };
+
+*/

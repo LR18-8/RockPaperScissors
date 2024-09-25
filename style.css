@@ -1,0 +1,81 @@
+* {
+    text-align: center;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+    width:85%;
+}
+
+.title {
+    margin: 15px 0;
+
+    border: 2px solid green;
+}
+
+.gameOutput {
+    margin: 15px 0;
+
+    border: 2px solid yellow;
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+
+    border: 1px solid red;
+}
+
+.gameBtns>button {
+    width: 18vw;
+    height: 18vh;
+    font-size: 7vw;
+    color: whitesmoke;
+    background-color: rgb(64, 114, 221);
+}
+
+.gameBtns {
+    width: 33%;
+
+    border: 2px solid black;
+}
+
+.score {
+    margin: 15px 0;
+
+    border: 2px solid pink;
+}
+
+/*
+working JS code for the user button selection.
+
+temp storing here for safe keeping.
+
+----------------
+
+let userSelection = "";
+
+function getHumanChoice(){
+
+
+    // Logs users selection and stores in userSelection
+    const buttons = document.querySelectorAll(".buttons");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            userSelection = e.target.value;
+            console.log(userSelection)
+        });
+    });
+
+    return userSelection;
+
+    //console.log(humanChoice); // Used for testing
+};
+
+-----------------
+
+
+*/

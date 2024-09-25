@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="style.css" /> 
-        <script src="script.js" defer></script>
     </head>
 
 <body>
@@ -21,15 +20,15 @@
             <div class="btnWrapper">
 
                 <div class="gameBtns">
-                    <button>&#129704;</button>
+                    <button name="gameBtn" onclick="runGame(this.value)" value="rock">&#129704;</button>
                 </div>
 
                 <div class="gameBtns">
-                    <button>&#129531;</button>
+                    <button name="gameBtn" onclick="runGame(this.value)" value="paper">&#129531;</button>
                 </div>
 
                 <div class="gameBtns">
-                    <button>&#9984;</button>
+                    <button name="gameBtn" onclick="runGame(this.value)" value="scissors">&#9984;</button>
                 </div>
 
             </div>
@@ -38,5 +37,7 @@
                     <p>Score: </p>
                 </div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>

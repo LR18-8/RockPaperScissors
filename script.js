@@ -1,6 +1,11 @@
+//global variables
+let globalHumanScore = 0;
+let globalComputerScore = 0;
+let roundCount = 0;
+
 function getComputerChoice(){  
     let randomNumber = Math.floor(Math.random() * 3); 
-    computerChoice = "I haven't made my choice yet!";
+    let computerChoice = "I haven't made my choice yet!";
 
     if (randomNumber === 0){
         computerChoice = "rock"
@@ -11,23 +16,61 @@ function getComputerChoice(){
     };
 
     return computerChoice;
-    //console.log(randomNumber); used for testing
 
     //console.log(computerChoice); Used for testing
 };
 
-function getHumanChoice(){
-    humanChoice = prompt("Please choose between Rock, Paper or Scissors.").toLowerCase();
+function runGame(buttonValue){
 
-    if(humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !==  "scissors"){
-        alert(`${humanChoice} is not a valid choice, please choose again`);
-        getHumanChoice();
-    } else{        
-        return humanChoice;
+    let humanChoice = buttonValue;
+    let computerChoice = getComputerChoice();
+
+    //check to see if round is a draw
+    if (humanChoice === computerChoice) {
+        console.log(`You selected ${humanChoice} and the Computer also selected ${computerChoice}. This round is a draw!`)
     };
 
-   //console.log(humanChoice); // Used for testing
+    //compute winner between rock vs scissors
+    if (humanChoice === "rock" && computerChoice === "scissors"){
+        console.log("You Win! Rock beats Scissors");
+        globalHumanScore ++;
+    } else if (computerChoice === "rock" && humanChoice === "scissors"){
+        console.log("You Loose! Rock beats Scissors");
+        globalComputerScore ++
+    }
+
+    //compute winner scissors vs paper
+    if (humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("You Win! Scissors beats Paper");
+        globalHumanScore ++;
+    } else if (computerChoice === "scissors" && humanChoice === "paper"){
+        console.log("You Loose! Scissors beats Paper");
+        globalComputerScore ++
+    }
+
+    //compute winner between paper vs rock
+    if (humanChoice === "paper" && computerChoice === "rock"){
+        console.log("You Win! Paper beats Rock");
+        globalHumanScore ++;
+    } else if (computerChoice === "paper" && humanChoice === "rock"){
+        console.log("You Loose! Paper beats Rock");
+        globalComputerScore ++
+    }
+
+    console.log(globalHumanScore);
+    console.log(globalComputerScore);
+
+    if (globalHumanScore === 5) {
+        alert("you Win")
+        location.reload();
+    } else if (globalComputerScore === 5){
+        alert("Computer wins");
+        location.reload();
+    }
 };
+
+
+
 
 function playGame(){
         let rock = "rock";

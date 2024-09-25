@@ -25,133 +25,94 @@ function runGame(buttonValue){
     let humanChoice = buttonValue;
     let computerChoice = getComputerChoice();
 
+    //selecting DOM elements
+    const pScoreDOM = document.getElementById("playerScoreOutput");
+    const cScoreDOM = document.getElementById("compScoreOutput");
+    const outputDOM = document.getElementById("gameOutput");
+    const popupWrapDOM = document.getElementById("popupWrapper");
+    const popupDOM = document.getElementById("popup");
+    const endMessage = document.getElementById("endMsg");
+    const endHeading = document.getElementById("endHeading");
+
     //check to see if round is a draw
     if (humanChoice === computerChoice) {
-        console.log(`You selected ${humanChoice} and the Computer also selected ${computerChoice}. This round is a draw!`)
+        outputDOM.innerHTML = `DRAW, You both selected ${humanChoice}`;
     };
 
     //compute winner between rock vs scissors
     if (humanChoice === "rock" && computerChoice === "scissors"){
-        console.log("You Win! Rock beats Scissors");
+
+        outputDOM.innerHTML = `You WIN this round. ${humanChoice} beats ${computerChoice}`;
+
         globalHumanScore ++;
+
+        pScoreDOM.innerHTML = globalHumanScore;
+
     } else if (computerChoice === "rock" && humanChoice === "scissors"){
-        console.log("You Loose! Rock beats Scissors");
+
+        outputDOM.innerHTML = `You LOSE this round. ${computerChoice} beats ${humanChoice}`;
+
         globalComputerScore ++
+
+        cScoreDOM.innerHTML = globalComputerScore;
     }
 
     //compute winner scissors vs paper
     if (humanChoice === "scissors" && computerChoice === "paper"){
-        console.log("You Win! Scissors beats Paper");
+
+        outputDOM.innerHTML = `You WIN this round. ${humanChoice} beats ${computerChoice}`;
+
         globalHumanScore ++;
+
+        pScoreDOM.innerHTML = globalHumanScore;
+
     } else if (computerChoice === "scissors" && humanChoice === "paper"){
-        console.log("You Loose! Scissors beats Paper");
+
+        outputDOM.innerHTML = `You LOSE this round. ${computerChoice} beats ${humanChoice}`;
+
         globalComputerScore ++
+
+        cScoreDOM.innerHTML = globalComputerScore;
     }
 
     //compute winner between paper vs rock
     if (humanChoice === "paper" && computerChoice === "rock"){
-        console.log("You Win! Paper beats Rock");
-        globalHumanScore ++;
-    } else if (computerChoice === "paper" && humanChoice === "rock"){
-        console.log("You Loose! Paper beats Rock");
-        globalComputerScore ++
-    }
 
-    console.log(globalHumanScore);
-    console.log(globalComputerScore);
+        outputDOM.innerHTML = `You WIN this round. ${humanChoice} beats ${computerChoice}`;
+
+        globalHumanScore ++;
+
+        pScoreDOM.innerHTML = globalHumanScore;
+
+    } else if (computerChoice === "paper" && humanChoice === "rock"){
+
+        outputDOM.innerHTML = `You LOSE this round. ${computerChoice} beats ${humanChoice}`;
+
+        globalComputerScore ++
+
+        cScoreDOM.innerHTML = globalComputerScore;
+    }
 
     if (globalHumanScore === 5) {
-        alert("you Win")
-        location.reload();
+
+        endHeading.innerHTML = "Congratulations! you WIN!";
+
+        endMessage.innerHTML = `Your score: ${globalHumanScore} <br>
+        Computer score: ${globalComputerScore}`;
+
+        popupWrapDOM.classList.remove("hidden");
+
+        popupDOM.classList.remove("hidden");
+
     } else if (globalComputerScore === 5){
-        alert("Computer wins");
-        location.reload();
+
+        endHeading.innerHTML = "Better luck next time";
+
+        endMessage.innerHTML = `Your score: ${globalHumanScore} <br>
+        Computer score: ${globalComputerScore}`;
+
+        popupWrapDOM.classList.remove("hidden");
+
+        popupDOM.classList.remove("hidden");
     }
 };
-
-
-
-
-function playGame(){
-        let rock = "rock";
-        let paper = "paper";
-        let scissors = "scissors";
-
-        let humanScore = 0;
-        let computerScore = 0;
-
-        //check to see if round is a draw
-        if (humanChoice === computerChoice) {
-            console.log(`You selected ${humanChoice} and the Computer also selected ${computerChoice}. This round is a draw!`)
-        };
-
-        //compute winner between rock vs scissors
-        if (humanChoice === rock && computerChoice === scissors){
-            console.log("You Win! Rock beats Scissors");
-            humanScore ++;
-        } else if (computerChoice === rock && humanChoice === scissors){
-            console.log("You Loose! Rock beats Scissors");
-            computerScore ++
-        }
-
-        //compute winner scissors vs paper
-        if (humanChoice === scissors && computerChoice === paper){
-            console.log("You Win! Scissors beats Paper");
-            humanScore ++;
-        } else if (computerChoice === scissors && humanChoice === paper){
-            console.log("You Loose! Scissors beats Paper");
-            computerScore ++
-        }
-
-        //compute winner between paper vs rock
-        if (humanChoice === paper && computerChoice === rock){
-            console.log("You Win! Paper beats Rock");
-            humanScore ++;
-        } else if (computerChoice === paper && humanChoice === rock){
-            console.log("You Loose! Paper beats Rock");
-            computerScore ++
-        }
-
-        console.log(`Human Choice: ${humanChoice} || Computer Choice: ${computerChoice}`);
-        console.log(`Human Score: ${humanScore} || Computer Score: ${computerScore}`);
-
-        if (humanScore > computerScore){
-            globalHumanScore++
-        } else if (computerScore > humanScore) {
-            globalComputerScore++
-        }
-
-        return humanScore, computerScore;
- };
-
-/*
-
--------- RUN GAME LOGIC --------
-
-//loop to play game for 5 rounds
-for (let roundCount = 1; roundCount <= 5; roundCount++){
-    
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-
-    playGame();
-
-    console.log("\n"); 
-};
-
-
-
-//display global scores
-if (globalComputerScore === globalHumanScore){
-
-    console.log(`The game is a draw. You scored ${globalHumanScore} and the computer scored ${globalComputerScore}`);
-
-} else if (globalHumanScore < globalComputerScore){
-
-    console.log(`You Loose, ${globalComputerScore} to ${globalHumanScore}`);
-} else {
-
-    console.log(`You Win, ${globalHumanScore} to ${globalComputerScore}`);
-};
-
-*/

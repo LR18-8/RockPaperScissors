@@ -14,7 +14,7 @@
     </div>
 
         <div class="gameOutput">
-            <p>Game Output</p>
+            <p id="gameOutput">Please make your selection by clicking one of the buttons below</p>
         </div>
 
             <div class="btnWrapper">
@@ -34,8 +34,34 @@
             </div>
 
                 <div class="score">
-                    <p>Score: </p>
+                    <h2>Scoreboard</h2>
+
+                        <div class="flexRowWrap">
+                        
+                            <div class="playerScore">
+                                <h3>Player Score</h3>
+                                <p id="playerScoreOutput">0</p>
+                            </div>
+
+                            <div class="computerScore">
+                                <h3>Computer Score</h3>
+                                <p id="compScoreOutput">0</p>
+                            </div>
+                        </div>
                 </div>
+</div>
+
+
+<div id="popupWrapper" class="hidden">
+
+    <div id="popup" class="hidden">
+
+        <h1 id="endHeading"></h1>
+
+        <p id="endMsg"></p>
+
+        <button onclick="location.reload()">Play Again</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
